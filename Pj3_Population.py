@@ -25,11 +25,11 @@ rs1 = {str(rs762551): "rs762551",str(rs4988235) :"rs4988235", str(rs713598) :"rs
        str(rs1800206): "rs1800206",str(rs1800588) :"rs1800588", str(rs1801282) :"rs1801282",  str(rs1801133) :"rs1801133",
        str(rs7501331) :"rs7501331",str(rs12934922) :"rs12934922", str(rs1256335) :"rs1256335", str(rs602662) :"rs602662"}
 
+
 rsler = [rs762551, rs4988235, rs713598, rs1726866, rs10246939, rs17782313, rs1800544, rs5400, rs1051168, rs9939609,
          rs17300539, rs1800206, rs1800588, rs1801282, rs1801133, rs7501331, rs12934922, rs1256335, rs602662]
-foldisim = ["rs762551", "rs4988235", "rs713598", "rs1726866", "rs10246939", "rs17782313", "rs1800544", "rs5400", "rs1051168",
-            "rs9939609", "rs17300539", "rs1800206", "rs1800588", "rs1801282", "rs1801133", "rs7501331",
-            "rs12934922", "rs1256335", "rs602662"]
+rs = rs1.values()
+
 #19 rsi etnik gruplarına göre ayrı klasörlere kaydedildi.
 def ethnicchang(df):
     for index,value in enumerate(population):
@@ -39,7 +39,7 @@ def ethnicchang(df):
     df['Population(s)'] = population
 
 for i in rsler:
-    for j in foldisim:
+    for j in rs:
         if os.path.isdir(f"output/{j}") == False:
             os.mkdir(f"output/{j}")
 for i in rsler:
